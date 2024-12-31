@@ -10,54 +10,45 @@ import { useEffect, useState } from 'react';
 
 const Home = () => {
   const { dispatch } = useFormContext();
+  const [isPartiallyFillFormOpen, setPartiallyFillFormOpen] = useState(false);
   const [isPaymentForCompletedFormOpen, setPaymentForCompletedFormOpen] =
     useState(false);
-  const [isPartiallyFillFormOpen, setPartiallyFillFormOpen] = useState(false);
   const [isVisaStatusFormOpen, setVisaStatusFormOpen] = useState(false);
-
-  const handlePartiallyFillFormOpen = () => {
-    setPartiallyFillFormOpen(prev => !prev);
-  };
-
-  const handlePaymentForCompletedFormOpen = () => {
-    setPaymentForCompletedFormOpen(prev => !prev);
-  };
-  const handleVisaStatusFormOpen = () => {
-    setVisaStatusFormOpen(prev => !prev);
-  };
 
   useEffect(() => {
     localStorage.removeItem('formId');
   }, [dispatch]);
 
   return (
-    <>
-      <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100">
-        {/* Background Decorations */}
-        <div className="absolute inset-0 bg-gradient-to-b from-orange/5 via-transparent to-primary/5 pointer-events-none"></div>
-        <div className="absolute inset-0 bg-[url('/assets/images/india/common/pattern.png')] bg-repeat opacity-5 pointer-events-none"></div>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      {/* Background Patterns */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-orange/5 via-transparent to-primary/5"></div>
+        <div className="absolute inset-0 bg-[url('/assets/images/india/common/pattern.png')] bg-repeat opacity-5"></div>
+      </div>
 
-        {/* Main Content */}
+      {/* Content */}
+      <div className="relative">
         <Banner />
 
         {/* Action Buttons Section */}
-        <div className="container relative w-full py-10 mx-auto">
-          <div className="grid grid-cols-1 gap-6 px-4 md:px-6 lg:px-8 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
+        <div className="container relative w-full py-12 mx-auto">
+          <div className="grid grid-cols-1 gap-8 px-4 md:px-6 lg:px-8 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
             {/* Apply for India */}
-            <Link href="/visa/step-one" className="group h-full">
-              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white border border-transparent rounded-xl hover:border-orange/20 hover:shadow-2xl hover:shadow-orange/5 group-hover:scale-[1.02]">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange/10 via-primary/5 to-transparent rounded-bl-full -z-10"></div>
-                <div className="flex flex-col items-center justify-center flex-grow text-center space-y-3">
-                  <span className="text-lg font-semibold text-gray-800">
+            <Link href="/visa/step-one" className="h-full group">
+              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white/90 backdrop-blur-sm border-2 border-primary/10 rounded-2xl hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 group-hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-[100px] bg-gradient-to-br from-primary/20 via-primary/10 to-transparent -z-10"></div>
+                <div className="flex flex-col items-center justify-center flex-grow space-y-4 text-center">
+                  <span className="text-xl font-semibold text-secondary">
                     Apply For INDIA
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-600">
                     Start New Application
                   </span>
-                  <span className="inline-flex items-center justify-center w-10 h-10 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-orange to-primary group-hover:scale-110">
+                  <span className="inline-flex items-center justify-center w-12 h-12 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-primary to-primary/80 group-hover:scale-110 shadow-lg shadow-primary/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5"
+                      className="w-6 h-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -77,21 +68,21 @@ const Home = () => {
             {/* Amend or Complete */}
             <button
               onClick={() => setPartiallyFillFormOpen(true)}
-              className="group h-full"
+              className="h-full group"
             >
-              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white border border-transparent rounded-xl hover:border-pink/20 hover:shadow-2xl hover:shadow-pink/5 group-hover:scale-[1.02]">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink/10 via-primary/5 to-transparent rounded-bl-full -z-10"></div>
-                <div className="flex flex-col items-center justify-center flex-grow text-center space-y-3">
-                  <span className="text-lg font-semibold text-gray-800">
+              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white/90 backdrop-blur-sm border-2 border-pink/10 rounded-2xl hover:border-pink/30 hover:shadow-xl hover:shadow-pink/10 group-hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-[100px] bg-gradient-to-br from-pink/20 via-pink/10 to-transparent -z-10"></div>
+                <div className="flex flex-col items-center justify-center flex-grow space-y-4 text-center">
+                  <span className="text-xl font-semibold text-secondary">
                     Amend or Complete
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-600">
                     Partially Filled Form
                   </span>
-                  <span className="inline-flex items-center justify-center w-10 h-10 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-pink to-primary group-hover:scale-110">
+                  <span className="inline-flex items-center justify-center w-12 h-12 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-pink to-pink/80 group-hover:scale-110 shadow-lg shadow-pink/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5"
+                      className="w-6 h-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -111,21 +102,21 @@ const Home = () => {
             {/* Make Payment */}
             <button
               onClick={() => setPaymentForCompletedFormOpen(true)}
-              className="group h-full"
+              className="h-full group"
             >
-              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white border border-transparent rounded-xl hover:border-success/20 hover:shadow-2xl hover:shadow-success/5 group-hover:scale-[1.02]">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-success/10 via-primary/5 to-transparent rounded-bl-full -z-10"></div>
-                <div className="flex flex-col items-center justify-center flex-grow text-center space-y-3">
-                  <span className="text-lg font-semibold text-gray-800">
+              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white/90 backdrop-blur-sm border-2 border-success/10 rounded-2xl hover:border-success/30 hover:shadow-xl hover:shadow-success/10 group-hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-[100px] bg-gradient-to-br from-success/20 via-success/10 to-transparent -z-10"></div>
+                <div className="flex flex-col items-center justify-center flex-grow space-y-4 text-center">
+                  <span className="text-xl font-semibold text-secondary">
                     Make Payment
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-600">
                     For Completed Form
                   </span>
-                  <span className="inline-flex items-center justify-center w-10 h-10 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-success to-primary group-hover:scale-110">
+                  <span className="inline-flex items-center justify-center w-12 h-12 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-success to-success/80 group-hover:scale-110 shadow-lg shadow-success/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5"
+                      className="w-6 h-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -145,21 +136,21 @@ const Home = () => {
             {/* Visa Status */}
             <button
               onClick={() => setVisaStatusFormOpen(true)}
-              className="group h-full"
+              className="h-full group"
             >
-              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white border border-transparent rounded-xl hover:border-brown/20 hover:shadow-2xl hover:shadow-brown/5 group-hover:scale-[1.02]">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brown/10 via-primary/5 to-transparent rounded-bl-full -z-10"></div>
-                <div className="flex flex-col items-center justify-center flex-grow text-center space-y-3">
-                  <span className="text-lg font-semibold text-gray-800">
+              <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white/90 backdrop-blur-sm border-2 border-brown/10 rounded-2xl hover:border-brown/30 hover:shadow-xl hover:shadow-brown/10 group-hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-[100px] bg-gradient-to-br from-brown/20 via-brown/10 to-transparent -z-10"></div>
+                <div className="flex flex-col items-center justify-center flex-grow space-y-4 text-center">
+                  <span className="text-xl font-semibold text-secondary">
                     Visa Status
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-600">
                     Check Application Status
                   </span>
-                  <span className="inline-flex items-center justify-center w-10 h-10 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-brown to-primary group-hover:scale-110">
+                  <span className="inline-flex items-center justify-center w-12 h-12 text-white transition-transform duration-300 rounded-full bg-gradient-to-r from-brown to-brown/80 group-hover:scale-110 shadow-lg shadow-brown/20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5"
+                      className="w-6 h-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -178,23 +169,25 @@ const Home = () => {
           </div>
         </div>
 
-        <ApplySection />
+        <div className="relative">
+          <ApplySection />
+        </div>
       </div>
 
       {/* Modals */}
       <PartiallyFillForm
         isFormModalOpen={isPartiallyFillFormOpen}
-        handleFormModal={handlePartiallyFillFormOpen}
+        handleFormModal={() => setPartiallyFillFormOpen(false)}
       />
       <PaymentForCompletedForm
         isFormModalOpen={isPaymentForCompletedFormOpen}
-        handleFormModal={handlePaymentForCompletedFormOpen}
+        handleFormModal={() => setPaymentForCompletedFormOpen(false)}
       />
       <VisaStatusForm
         isFormModalOpen={isVisaStatusFormOpen}
-        handleFormModal={handleVisaStatusFormOpen}
+        handleFormModal={() => setVisaStatusFormOpen(false)}
       />
-    </>
+    </main>
   );
 };
 

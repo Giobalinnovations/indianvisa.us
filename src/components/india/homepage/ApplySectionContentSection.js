@@ -70,91 +70,115 @@ const ApplySectionContentSection = () => {
     'Vietnam',
   ];
 
-  const popularDestinations = [
-    { city: 'Delhi', description: 'Capital city, rich in history and culture' },
-    { city: 'Mumbai', description: 'Financial capital and entertainment hub' },
-    { city: 'Bangalore', description: 'Technology capital of India' },
-    { city: 'Agra', description: 'Home to the iconic Taj Mahal' },
-    { city: 'Jaipur', description: 'The Pink City of royal heritage' },
-    { city: 'Goa', description: 'Tropical paradise with beautiful beaches' },
-    { city: 'Varanasi', description: 'Spiritual capital of India' },
+  const featuredDestinations = [
     {
-      city: 'Kerala',
-      description: 'God&apos;s own country with scenic backwaters',
+      city: 'New Delhi',
+      description:
+        "Experience the blend of history and modernity in India's capital",
+    },
+    {
+      city: 'Mumbai',
+      description:
+        "Discover the vibrant heart of India's commerce and entertainment",
+    },
+    {
+      city: 'Bengaluru',
+      description: "Explore India's innovation hub and garden city",
+    },
+    {
+      city: 'Taj Mahal',
+      description: 'Visit the iconic symbol of eternal love in Agra',
+    },
+    {
+      city: 'Pink City',
+      description: "Immerse in Jaipur's royal heritage and architecture",
+    },
+    {
+      city: 'Goan Beaches',
+      description: 'Relax on pristine shores and experience vibrant culture',
+    },
+    {
+      city: 'Holy Ganges',
+      description: 'Witness spiritual traditions in ancient Varanasi',
+    },
+    {
+      city: 'Backwaters',
+      description: "Cruise Kerala's tranquil waterways and lush landscapes",
     },
   ];
 
   return (
-    <div className="text-sm">
-      {/* Header */}
-      <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-r from-secondary via-secondary to-primary">
+    <div className="text-base">
+      {/* Welcome Header */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-secondary via-primary to-orange rounded-t-2xl">
         <div className="absolute inset-0 bg-[url('/assets/images/india/common/pattern.png')] opacity-10"></div>
-        <h2 className="relative flex items-center justify-center py-4 text-base font-semibold text-center text-white md:text-lg">
-          Welcome to Indian e-Visa Services
+        <h2 className="relative flex items-center justify-center py-6 text-lg font-semibold text-center text-white md:text-xl lg:text-2xl">
+          Discover India Through e-Visa Services
         </h2>
       </div>
 
-      {/* Introduction Section */}
-      <div className="p-6 space-y-6">
+      {/* Main Content */}
+      <div className="p-8 space-y-8">
+        {/* Introduction */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-secondary">
-            Your Gateway to Incredible India
+          <h2 className="text-2xl font-bold text-secondary">
+            Begin Your Indian Adventure
           </h2>
           <p className="leading-relaxed text-gray-600">
-            India, a land of diverse cultures, rich heritage, and technological
-            advancement, welcomes millions of visitors annually. From ancient
-            temples to modern tech hubs, from the majestic Himalayas to serene
-            coastal beaches, India offers an unparalleled travel experience. Our
-            e-Visa service simplifies your journey to explore this magnificent
-            country.
+            India beckons with its kaleidoscope of experiences - from ancient
+            temples to modern metropolises, from snow-capped Himalayas to
+            sun-kissed beaches. Our streamlined e-Visa service opens the door to
+            this extraordinary land, making your travel preparations seamless
+            and efficient.
           </p>
         </div>
 
-        {/* Key Features */}
-        <div className="grid gap-4 md:grid-cols-3">
+        {/* Service Features */}
+        <div className="grid gap-6 md:grid-cols-3">
           {[
             {
-              title: 'Quick Processing',
+              title: 'Swift Processing',
               description:
-                'Fast and efficient visa processing with digital verification',
+                'Experience rapid visa processing with our advanced digital system',
             },
             {
-              title: 'Secure Platform',
+              title: 'Enhanced Security',
               description:
-                'State-of-the-art security for your personal information',
+                'Your data protected by cutting-edge encryption technology',
             },
             {
-              title: '24/7 Support',
+              title: 'Expert Support',
               description:
-                'Round-the-clock assistance for your visa applications',
+                'Access to dedicated visa specialists around the clock',
             },
           ].map((feature, index) => (
             <div
               key={index}
-              className="p-4 transition-all duration-300 bg-white rounded-lg shadow-sm hover:shadow-md"
+              className="p-6 transition-all duration-300 bg-white border-2 rounded-xl shadow-md hover:shadow-lg border-primary/5 hover:border-primary/20 group"
             >
-              <h3 className="mb-2 text-base font-semibold text-secondary">
+              <h3 className="mb-3 text-lg font-semibold text-secondary group-hover:text-primary">
                 {feature.title}
               </h3>
-              <p className="text-sm text-gray-600">{feature.description}</p>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Eligible Countries Section */}
-        <div className="p-6 space-y-4 bg-gray-50 rounded-xl">
-          <h2 className="text-lg font-semibold text-secondary">
-            Eligible Countries for e-Visa
+        {/* Eligible Nations */}
+        <div className="p-8 space-y-6 bg-gradient-to-br from-secondary/5 via-primary/5 to-orange/5 rounded-2xl border-2 border-primary/5">
+          <h2 className="text-xl font-bold text-secondary">
+            Nations Eligible for e-Visa
           </h2>
           <p className="text-gray-600">
-            Citizens of the following countries can apply for an Indian e-Visa.
-            The process is completely online and user-friendly.
+            Citizens from the following countries can access our streamlined
+            online visa application process. Experience a paperless, efficient
+            journey to your Indian adventure.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-3">
             {eligibleCountries.map((country, index) => (
               <span
                 key={index}
-                className="px-3 py-1 text-xs text-gray-600 transition-all duration-300 bg-white rounded-full shadow-sm hover:shadow-md hover:text-primary"
+                className="px-4 py-2 text-sm text-gray-600 transition-all duration-300 bg-white border-2 rounded-full shadow-sm hover:shadow-md border-primary/5 hover:border-primary/20 hover:text-primary hover:-translate-y-1"
               >
                 {country}
               </span>
@@ -162,48 +186,49 @@ const ApplySectionContentSection = () => {
           </div>
         </div>
 
-        {/* Popular Destinations */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-secondary">
-            Popular Destinations
+        {/* Featured Destinations */}
+        <div className="space-y-6">
+          <h2 className="text-xl font-bold text-secondary">
+            Must-Visit Destinations
           </h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {popularDestinations.map((dest, index) => (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {featuredDestinations.map((dest, index) => (
               <div
                 key={index}
-                className="p-4 transition-all duration-300 bg-white rounded-lg shadow-sm hover:shadow-md hover:scale-[1.02]"
+                className="p-6 transition-all duration-300 bg-white border-2 rounded-xl shadow-md hover:shadow-lg border-primary/5 hover:border-primary/20 hover:-translate-y-1 group"
               >
-                <h3 className="mb-1 font-semibold text-primary">{dest.city}</h3>
-                <p className="text-sm text-gray-600">{dest.description}</p>
+                <h3 className="mb-2 text-lg font-semibold text-primary group-hover:text-orange">
+                  {dest.city}
+                </h3>
+                <p className="text-gray-600">{dest.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* About Section */}
-        <div className="p-6 space-y-4 bg-gradient-to-r from-orange/5 to-primary/5 rounded-xl">
-          <h2 className="text-lg font-semibold text-secondary">
-            Why Choose Indian e-Visa?
+        {/* Benefits Section */}
+        <div className="p-8 space-y-6 bg-gradient-to-br from-orange/5 via-primary/5 to-success/5 rounded-2xl border-2 border-primary/5">
+          <h2 className="text-xl font-bold text-secondary">
+            Benefits of Indian e-Visa
           </h2>
           <div className="space-y-4 text-gray-600">
             <p>
-              The Indian e-Visa system represents a significant advancement in
-              facilitating international travel to India. This digital platform
-              offers a streamlined, efficient process for obtaining travel
-              authorization, eliminating the need for physical visa
-              applications.
+              The Indian e-Visa system revolutionizes international travel to
+              India through its digital-first approach. Our platform transforms
+              the traditional visa process into a smooth, paperless experience
+              accessible from anywhere in the world.
             </p>
             <p>
-              With multiple categories including tourist, business, and medical
-              visas, the system caters to diverse travel needs. The platform
-              ensures secure, swift processing while maintaining the highest
-              standards of security and verification.
+              Whether you&apos;re planning a cultural expedition, business
+              venture, or medical visit, our comprehensive e-Visa categories
+              cater to your specific needs. The system ensures thorough security
+              checks while maintaining quick processing times.
             </p>
             <p>
-              Whether you&apos;re exploring India&apos;s rich cultural heritage,
-              pursuing business opportunities, or seeking medical treatment, our
-              e-Visa service provides a convenient gateway to your Indian
-              journey.
+              From the majestic Himalayas to the tropical beaches, from ancient
+              temples to modern business hubs - your Indian journey begins with
+              a simple, secure online application. Let us help you unlock the
+              doors to incredible India.
             </p>
           </div>
         </div>

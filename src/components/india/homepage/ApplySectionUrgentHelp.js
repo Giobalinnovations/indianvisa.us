@@ -2,92 +2,88 @@ import { BiMailSend } from 'react-icons/bi';
 import { FaCheck } from 'react-icons/fa';
 
 const ApplySectionUrgentHelp = () => {
-  const travelInfoData = [
-    {
-      id: 1,
-      title: 'Contact Us',
-    },
-    {
-      id: 2,
-      title: 'Urgent Travel',
-    },
-    {
-      id: 3,
-      title: 'eTourist Travel',
-    },
-    {
-      id: 1,
-      title: 'Emergency Travel',
-    },
-    {
-      id: 2,
-      title: 'eBusiness Travel',
-    },
-    {
-      id: 3,
-      title: 'Travel to Delhi',
-    },
-    {
-      id: 3,
-      title: 'Indian Tourism',
-    },
+  const quickLinks = [
+    { title: 'Support Center' },
+    { title: 'Express Processing' },
+    { title: 'Tourist Guidelines' },
+    { title: 'Medical Travel' },
+    { title: 'Business Entry' },
+    { title: 'Capital Region' },
+    { title: 'Travel Resources' },
   ];
-  const cardData = [
+
+  const securePayments = [
+    { imgSrc: '/assets/images/india/common/paypal.png', alt: 'PayPal Secure' },
     {
-      id: 1,
-      imgSrc: '/assets/images/india/common/paypal.png',
-    },
-    {
-      id: 2,
       imgSrc: '/assets/images/india/common/mastercard-secured.png',
+      alt: 'Mastercard SecureCode',
     },
     {
-      id: 3,
       imgSrc: '/assets/images/india/common/varified.png',
+      alt: 'Verified Payment',
     },
-    {
-      id: 4,
-      imgSrc: '/assets/images/india/common/mastercard.png',
-    },
+    { imgSrc: '/assets/images/india/common/mastercard.png', alt: 'Mastercard' },
   ];
+
   return (
-    <>
-      {/* urgent help satrt  */}
-      <div>
-        <h2 className="py-2 text-[0.9rem] font-semibold text-center text-white rounded-t bg-secondary">
-          TRAVEL INFORMATION
+    <div className="overflow-hidden">
+      {/* Quick Access Links */}
+      <section>
+        <h2 className="bg-gradient-to-r from-secondary via-primary to-orange text-white text-center py-4 font-semibold rounded-t-2xl">
+          QUICK ACCESS
         </h2>
-        <div className="divide-y-[1px]">
-          {travelInfoData.map((e, i) => (
-            <div key={i} className="flex items-center p-3 space-x-3">
-              <span>
-                <FaCheck className="font-bold text-green-700" />
+        <div className="divide-y divide-primary/10">
+          {quickLinks.map((item, index) => (
+            <button
+              key={index}
+              className="w-full flex items-center gap-3 p-4 hover:bg-primary/5 transition-colors group"
+            >
+              <span className="w-6 h-6 rounded-full border-2 border-primary/20 flex items-center justify-center group-hover:border-primary transition-colors">
+                <FaCheck className="w-3 h-3 text-primary" />
               </span>
-              <span>{e.title}</span>
-            </div>
+              <span className="text-gray-600 group-hover:text-primary transition-colors">
+                {item.title}
+              </span>
+            </button>
           ))}
         </div>
-      </div>
-      {/* urgent help end */}
-      <div>
-        <h2 className="py-3 text-[0.9rem] font-semibold text-center text-white rounded-t bg-secondary">
-          TRAVEL INFORMATION
+      </section>
+
+      {/* Support Information */}
+      <section>
+        <h2 className="bg-gradient-to-r from-secondary via-primary to-orange text-white text-center py-4 font-semibold">
+          ASSISTANCE CENTER
         </h2>
-        <div className="flex items-center p-3 space-x-3 border-b-2">
-          <span>
-            <BiMailSend size={30} className="font-bold text-green-700" />
-          </span>
-          <span className="text-sm">info@traveltoindiaservices.com</span>
+        <div className="p-4 border-b border-primary/10 hover:bg-primary/5 transition-colors group">
+          <div className="flex items-center gap-4">
+            <span className="w-10 h-10 rounded-full border-2 border-primary/20 flex items-center justify-center group-hover:border-primary transition-colors">
+              <BiMailSend className="w-5 h-5 text-primary" />
+            </span>
+            <span className="text-gray-600 group-hover:text-primary transition-colors">
+              support@traveltoindiaservices.com
+            </span>
+          </div>
         </div>
-        <div className="flex flex-col flex-wrap justify-center gap-4 py-4 space-y-4 text-center">
-          {cardData.map((e, i) => (
-            <div className="flex items-center justify-center" key={i}>
-              <img src={e.imgSrc} className="w-40" />
+      </section>
+
+      {/* Secure Payment Options */}
+      <section className="p-6">
+        <div className="grid grid-cols-2 gap-6">
+          {securePayments.map((payment, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center hover:scale-105 transition-transform"
+            >
+              <img
+                src={payment.imgSrc}
+                alt={payment.alt}
+                className="w-full max-w-[120px] h-auto object-contain"
+              />
             </div>
           ))}
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 
