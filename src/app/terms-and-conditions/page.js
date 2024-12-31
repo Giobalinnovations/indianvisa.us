@@ -1,6 +1,7 @@
 export const metadata = {
-  title: 'Terms and Conditions',
-  description: 'Terms and Conditions',
+  title: 'Terms and Conditions - Indian Visa US',
+  description:
+    'Terms and conditions governing the use of our visa application services',
   alternates: {
     canonical: '/terms-and-conditions',
   },
@@ -9,101 +10,119 @@ export const metadata = {
 const page = () => {
   return (
     <div className="container px-4 pb-12 bg-white lg:pt-24 lg:py-10 lg:px-0 md:pt-28 md:pb-0 pt-28">
-      <div className="mx-auto ">
-        <h1 className="mb-3 text-4xl font-semibold lg:py-6">
-          Terms and Condition
+      <div className="mx-auto">
+        <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:py-6">
+          Terms and Conditions
         </h1>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Welcome to India Travel Services! We&apos;re glad you&apos;re here. By
-          using our website, you agree to follow our User Agreement and Privacy
-          Policy. We may update our content without notice, so please check
-          periodically. Your continued use of the site means you accept any
-          changes.{' '}
+        <p className="my-4 text-lg leading-relaxed text-gray-700">
+          Welcome to Indian Visa US. These terms and conditions outline the
+          rules and regulations for using our visa application services. By
+          accessing our platform and using our services, you agree to comply
+          with these terms.
         </p>
       </div>
 
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Responsible Use and Conduct</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Please use our website and resources responsibly and in compliance
-          with applicable laws and guidelines. Specifically:
-        </p>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Provide accurate information about yourself.{' '}
-        </p>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Keep your login information confidential.
-        </p>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Don&apos;t access our resources through unauthorised means.
-        </p>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Don&apos;t disrupt or interfere with our resources.
-        </p>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          You agree to indemnify us from any violation of this User Agreement.
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">Our Services</h2>
+        <div className="mt-4 space-y-4">
+          <p className="text-gray-700 leading-relaxed">
+            We provide the following services:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Indian visa application processing assistance</li>
+            <li>Document verification and guidance</li>
+            <li>Application status tracking</li>
+            <li>24/7 customer support</li>
+            <li>Secure payment processing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          User Obligations
+        </h2>
+        <div className="mt-4 space-y-4">
+          <p className="text-gray-700 leading-relaxed">
+            When using our services, you agree to:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Provide accurate and complete information</li>
+            <li>Submit authentic documents</li>
+            <li>Pay all applicable fees</li>
+            <li>Follow Indian visa regulations</li>
+            <li>Maintain account security</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">Service Fees</h2>
+        <p className="mt-4 text-gray-700 leading-relaxed">
+          All service fees must be paid in advance. Our fees are non-refundable
+          except in specific circumstances outlined in our refund policy. We use
+          secure payment methods to protect your financial information.
         </p>
       </div>
 
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Privacy</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          Your privacy is important to us. Please refer to our privacy policy
-          for more information.
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Liability Limitations
+        </h2>
+        <p className="mt-4 text-gray-700 leading-relaxed">
+          While we strive to provide reliable services, we cannot guarantee visa
+          approval as this decision lies solely with Indian authorities. Our
+          liability is limited to the service fees paid. We are not responsible
+          for:
+        </p>
+        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700">
+          <li>Visa application rejections</li>
+          <li>Delays in processing</li>
+          <li>Changes in government policies</li>
+          <li>Consequential damages</li>
+        </ul>
+      </div>
+
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Intellectual Property
+        </h2>
+        <p className="mt-4 text-gray-700 leading-relaxed">
+          All content on our website is protected by intellectual property
+          rights. You may not copy, distribute, or use our content without
+          explicit permission.
         </p>
       </div>
 
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">
-          Limitation of Warranties and Liability
-        </h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          We provide resources &quot;as is&quot; and &quot;as available.&quot;
-          We&apos;re not responsible for any damage resulting from the use of
-          our resources. We limit our liability to the amount you paid for our
-          products/services.
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Privacy Protection
+        </h2>
+        <p className="mt-4 text-gray-700 leading-relaxed">
+          Your use of our services is subject to our Privacy Policy. We protect
+          your personal information and use it only for processing your visa
+          application and related services.
         </p>
       </div>
 
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Copyrights and Trademarks</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          All content and materials on India Travel Services are protected by
-          copyright and trademark laws. Any unauthorised use is strictly
-          prohibited.
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Term Modifications
+        </h2>
+        <p className="mt-4 text-gray-700 leading-relaxed">
+          We reserve the right to modify these terms at any time. Changes become
+          effective immediately upon posting. Continued use of our services
+          constitutes acceptance of modified terms.
         </p>
       </div>
 
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Governing Law</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          By accessing our website, you agree to follow our country&apos;s laws.
-          Any legal action related to this User Agreement will be brought to the
-          courts in the same city as India Travel Services Pvt Ltd&apos;s
-          corporate office.
-        </p>
-      </div>
-
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Termination of Use</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          We may suspend or terminate your access to our website and resources,
-          with or without notice, for any reason.
-        </p>
-      </div>
-
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Guarantee</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          We don&apos;t provide any warranties or guarantees of any kind.
-        </p>
-      </div>
-
-      <div className="mx-auto  mt-7">
-        <h3 className="mt-2 text-lg font-bold">Contact Information</h3>
-        <p className="my-2 text-base font-medium leading-relaxed text-justify">
-          If you have any questions or comments about our Terms of Service,
-          please contact us at info@traveltoindiaservices.com
+      <div className="mx-auto mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Contact Information
+        </h2>
+        <p className="mt-4 text-gray-700 leading-relaxed">
+          For questions about these terms and conditions, please contact our
+          support team at support@indianvisa.us
         </p>
       </div>
     </div>
