@@ -180,8 +180,8 @@ const Footer = () => {
           <div className="pt-12 mt-12 text-center border-t border-white/10">
             <p className="text-sm text-gray-400">
               Copyright © {new Date().getFullYear()} |{' '}
-              <span className="font-medium text-white">E-Visa</span> | All
-              Rights Reserved
+              <span className="font-medium text-white">indianvisa.us</span> |
+              All Rights Reserved
             </p>
           </div>
         </div>
