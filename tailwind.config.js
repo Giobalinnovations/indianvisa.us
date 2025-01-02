@@ -8,17 +8,34 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2A9D8F',
-        secondary: '#264653',
-        orange: '#E76F51',
-        pink: '#F4A261',
-        brown: '#8B4513',
-        success: '#287271',
+        primary: '#0891b2',
+        secondary: '#334155',
+        accent: '#0ea5e9',
+        highlight: '#475569',
+        success: '#16a34a',
+        warning: '#d97706',
+        error: '#dc2626',
+        background: '#f0f9ff',
+        orange: '#f97316',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      keyframes: {
+        'spin-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'spin-slow-reverse': {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+      },
+      animation: {
+        'spin-slow': 'spin-slow 15s linear infinite',
+        'spin-slow-reverse': 'spin-slow-reverse 15s linear infinite',
       },
     },
   },
